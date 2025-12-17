@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <br />
+    <br />
+
+    {% if success == True %}
+    <div class="alert alert-success" role="alert">
+        Successful update!
+    </div>
+    {% elif success == False %}
+    <div class="alert alert-danger" role="alert">
+        Failed to update!
+    </div>
+    {% endif %}
+
+    <div class="main-login main-center">
+        <form class="form-horizontal" method="post" action="update_profile">
+            <div class="form-group">
+                <label for="name" class="cols-sm-2 control-label">Name</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ user.name }}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="cols-sm-2 control-label">Description</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <textarea class="form-control" rows="4" name="description" id="description">{{ user.description }}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-primary" type="submit" value="Update Profile" />
+            </div>
+        </form>
+    </div>
+
+    <div class="main-login main-center mt-5 mb-5">
+        <form class="form-horizontal" method="post" action="update_password">
+            <div class="form-group">
+                <label class="cols-sm-2 control-label">Password</label>
+
+                <div class="cols-sm-10 mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" name="old_password" id="old_password" placeholder="Old password" />
+                    </div>
+                </div>
+
+                <div class="cols-sm-10 mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" name="new_password" id="new_password" placeholder="New password" />
+                    </div>
+                </div>
+
+                <div class="cols-sm-10 mb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm password" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-primary" type="submit" value="Update Password" />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
