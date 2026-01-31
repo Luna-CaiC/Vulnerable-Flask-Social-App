@@ -1,4 +1,4 @@
-# Vulnerable Web App (Homework P3)
+# Vulnerable Web App
 
 ## Overview
 This project is a purposefully vulnerable web application. It mimics a simple social networking platform where users can post messages, view profiles, and update settings.
